@@ -1,0 +1,86 @@
+body{
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+}
+
+.contenedor{
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/*FLEX : grow, shrink, basis, */
+h2{
+  flex: 0 1 100%;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+h3{
+  font-family: 'Libre Baskerville', serif;
+  margin: 0;
+  font-weight: 700;
+
+}
+/*Make the imgs responsive*/
+img{
+  max-width: 100%;
+}
+
+/*Setup flex box and wrapping to not fall out of the page.*/
+
+/*Mobile first-> this sets up un card by row in mobile*/
+.contenido-principal{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/*This media query covers tablets, setting up 2 cards by row for medium
+devices */
+@media screen and (min-width:480px){
+  .contenido-principal{
+    display: flex;
+    flex-wrap: wrap;
+    /*Gives some aside margin*/
+    justify-content: space-between;
+  }
+  /*Sets up two articles (the cards) by row for tablet*/
+  .entrada {
+    /*flex: grow, shrink, basis. -1 REM gives space between cards*/
+    flex: 0 1 calc(50% - 1rem);
+
+  }
+}
+
+/*Sets up three articles (the cards) by row for pc*/
+@media screen and (min-width: 768px){
+  .entrada{
+    flex: 0 1 calc(33% - 1rem);
+  }
+}
+/*Card inner content*/
+.contenido{
+  text-transform: uppercase;
+  background-color: #ffffff;
+  margin-bottom: 1rem;
+  text-align: center;
+  /*Give inner spacet*/
+  padding: 1rem;
+}
+.contenido span{
+  color: #db008d;
+}
+.contenido h3{
+  font-size: .9rem;
+  line-height: 1.4rem;
+}
+.boton{
+  background-color: #008fd1;
+  padding: .6rem 2rem;
+  color: #ffffff;
+  text-decoration: none;
+  /*This would let the button expand all the way
+  to parent left and right overrinding 'a' display
+  inline character which prevents them from doing
+  that*/
+  /*display: block;*/
+}
